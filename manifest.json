@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.mr-dragon9.easyeffects",
+  "name": "Easy Effects Companion",
+  "version": "1.0.0",
+  "author": "toreko",
+  "license": "MIT",
+  "description": "Easy Effects in the bar: active preset, EQ on/off, preset switching, the battery of your Bluetooth speaker or headphones, and an opt-in theme match so Easy Effects follows your Omarchy theme.",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Easy Effects",
+    "description": "Left click = open Easy Effects, right click = EQ on/off, scroll = switch output preset.",
+    "category": "Media",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {},
+    "schema": [
+      { "key": "showBattery", "type": "boolean", "label": "Show Bluetooth battery", "defaultValue": true, "description": "When the current output is a Bluetooth device that reports its battery, show the level." },
+      { "key": "showPreset", "type": "boolean", "label": "Show preset name", "defaultValue": false, "description": "Show the active output preset next to the icon." },
+      { "key": "onlyBluetooth", "type": "boolean", "label": "Only on Bluetooth", "defaultValue": false, "description": "Hide the badge unless audio is playing to a Bluetooth device." },
+      { "key": "lowBattery", "type": "integer", "label": "Low battery (%)", "min": 5, "max": 50, "step": 5, "defaultValue": 20, "description": "At or below this level the badge turns the urgent colour." },
+      { "key": "matchTheme", "type": "boolean", "label": "Match Omarchy theme", "defaultValue": false, "description": "Write an 'Omarchy' color scheme and spectrum colors for Easy Effects from the current theme, and restart Easy Effects when the theme changes. Off by default because it changes Easy Effects' own settings." }
+    ]
+  }
+}
